@@ -1,0 +1,47 @@
+{% load static %}
+
+<div class="col-md-4">
+    <div class="card">
+        
+        {% if product.image %}
+        <img class="card-img-top product-img" src="{{product.image.url}}" alt="{{product.name}}">
+
+        {% else %}
+        <img class="card-img-top product-img" src="{% static 'images/default_product.jpg' %}" alt="{{product.name}}">
+
+        {% endif %}
+            
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">
+                <span class="text-primary fw-bold">₹{{product.sprice}}</span>
+                <small class="text-decoration-line-through">₹{{product.oprice}}</small>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6 mb-3"> 
+  <div class="card shadow-sm">
+      <img src="#" alt="item" class="card-img-top" height="300">
+      <div class="card-body">
+          <a href="#" class="card-title fs-5 nav-link">
+              Product 1
+          </a>
+          <p class="card-text">
+              this is Product 1
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                  <a href="#" class="btn btn-sm btn-outline-secondary">View</a>  
+                  <a class="btn btn-sm btn-outline-primary">
+                      <i class="bi bi-hand-thumbs-up"></i>
+                      100
+                  </a>    
+              </div>
+              <small class="text-body-secondary">
+              </small>
+          </div>
+      </div>
+  </div>
+</div> 

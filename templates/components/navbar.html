@@ -1,5 +1,5 @@
 <style>
-    #mynav{
+    #mynav {
         background-color: rgb(25, 73, 110);
     }
 </style>
@@ -15,6 +15,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link btn btn-primary" href="{% url 'contact' %}">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a href="{% url 'all_products' %}" class="nav-link">All Products</a>
             </li>
 
             {% if user.is_authenticated %}
@@ -33,6 +36,13 @@
 
 
         </ul>
-       
+        <form  class="d-flex my-2 my-lg-0" action="{% url 'search_products' %}">
+            <!-- {% csrf_token %} -->
+            <input type="text" class="from-control me-sm-2" placeholder="Serch" name="q">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+        </form>
+
     </div>
 </nav>

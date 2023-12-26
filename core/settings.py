@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFLICES_DIRS = [BASE_DIR.joinpath('staticfiles')]
+STATICFILES_DIRS = [BASE_DIR.joinpath('staticfiles')]
 STATIC_ROOT = BASE_DIR.joinpath('static')
 MEDIA_ROOT = 'media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media')
