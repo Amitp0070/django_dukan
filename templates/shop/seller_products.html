@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+
+{% endblock css %}
+
+
+{% block body %}
+<div class="container">
+    <h2>{{seller.name}} : Products</h2>
+    <div class="col-md-9">
+        <div class="container">
+            <div class="row">
+                {% for item in products %}
+                {% include 'components/product_card.html' with product=item %}
+                {% empty %}
+            </div>
+        </div>
+        <div class="alert alert-primary" role="alert">
+            <strong>Warning!</strong> No product available.
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

@@ -1,7 +1,93 @@
 {% extends 'layout/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<style>
+  #myCarousel {
+    height: 400px;
+    background-color: rgb(24, 23, 25);
+
+  }
+
+  .carousel {
+    background-color: black;
+    height: 400px;
+  }
+</style>
+{% endblock css %}
 
 
 {% block body %}
-    
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="slider-top">
+        <img src="{% static 'images/image2.png' %}" alt="1" height="400">
+        <img src="{% static 'images/image1.jpg' %}" alt="2" height="400">
+        <img src="{% static 'images/default_brand.png' %}" alt="3" height="400">
+        <img src="{% static 'images/default_product.jpg' %}" alt="4" height="400">
+        <img src="{% static 'images/backgraound.png' %}" alt="5" height="400">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
 {% endblock %}
-    
+
+{% block js %}
+  <script>
+    $(document).ready(() => {
+      $('.slider-top').slick(
+        {
+          dots: true,
+          autoplay: true,
+          autoplaySpeed: 100,
+          arrows: true,
+          
+
+        }
+      )
+    })
+  </script>
+{% endblock js %}
+  

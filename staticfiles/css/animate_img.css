@@ -1,0 +1,9 @@
+.product-img{
+    scale: 1;
+    transition: 0.5s;
+    filter: grayscale(100%);
+}
+/* 
+.product-img:hover{
+    scale: 1.1;
+} */
